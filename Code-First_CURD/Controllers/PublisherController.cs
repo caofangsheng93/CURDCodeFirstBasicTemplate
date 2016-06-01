@@ -45,7 +45,7 @@ namespace Code_First_CURD.Controllers
         public ActionResult UpdatePublisher(int id)
         {
           Publisher model=  _publisherService.GetPublisherById(id);
-          return View(model);
+          return View(model);  
         }
 
         [HttpPost]
