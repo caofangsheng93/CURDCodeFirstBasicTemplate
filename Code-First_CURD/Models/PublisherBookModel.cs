@@ -14,7 +14,7 @@ namespace Code_First_CURD.Models
         public string Address { get; set; }
 
         public string Title { get; set; }
-
-        public string Year { get; set; }
+       
+        public string Year { get; set; }    
     }
 }
