@@ -68,6 +68,7 @@ namespace Code_First_CURD.App_Start
             //kernel.Bind<Code_First_DbContext>().To<Code_First_DbContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
             kernel.Bind<IPublisherService>().To<PublisherService>();
+            kernel.Bind<IBookService>().To<BookService>();
         }        
     }
 }
