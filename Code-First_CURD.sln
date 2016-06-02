@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code_First.Data", "Code_Fir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code_First.Service", "Code_First.Service\Code_First.Service.csproj", "{56812B26-EB81-4FD5-87A7-ECCF6C7FEECD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code-First.Common", "Code-First.Common\Code-First.Common.csproj", "{805DF501-CE30-4583-B986-3EB0A88FA3F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{56812B26-EB81-4FD5-87A7-ECCF6C7FEECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56812B26-EB81-4FD5-87A7-ECCF6C7FEECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56812B26-EB81-4FD5-87A7-ECCF6C7FEECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805DF501-CE30-4583-B986-3EB0A88FA3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805DF501-CE30-4583-B986-3EB0A88FA3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805DF501-CE30-4583-B986-3EB0A88FA3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805DF501-CE30-4583-B986-3EB0A88FA3F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -147,6 +147,10 @@
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Code-First.Common\Code-First.Common.csproj">
+      <Project>{805df501-ce30-4583-b986-3eb0a88fa3f3}</Project>
+      <Name>Code-First.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeFirst.Entities\CodeFirst.Entities.csproj">
       <Project>{1ead90df-d213-4b51-9861-db2fcb20ab78}</Project>
       <Name>CodeFirst.Entities</Name>
