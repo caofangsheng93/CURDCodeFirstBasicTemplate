@@ -24,6 +24,9 @@ namespace Code_First.Data.Mapping
            //配置关系
            this.HasRequired(s => s.Publisher).WithMany(s => s.Books).HasForeignKey(s => s.PublisherId);
 
+           //配置表
+           ToTable("Books")
+
        }
     }
 }
