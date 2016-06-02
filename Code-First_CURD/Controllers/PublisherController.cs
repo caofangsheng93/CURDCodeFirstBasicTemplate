@@ -28,18 +28,26 @@ namespace Code_First_CURD.Controllers
         {
             return View();
         }
-
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult CreatePublisher(Publisher model)
         {
-            Publisher publishModel = new Publisher()
+            try
             {
-                PublisherName = model.PublisherName,
-                Address = model.Address
-            };
-            _publisherService.InsertPublisher(publishModel);
-
-            return View();
+                Publisher publishModel = new Publisher()
+                {
+                    PublisherName = model.PublisherName,
+                    Address = model.Address
+                };
+                _publisherService.InsertPublisher(publishModel);
+                
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
+            
         }
 
         public ActionResult UpdatePublisher(int id)
@@ -51,20 +59,38 @@ namespace Code_First_CURD.Controllers
         [HttpPost]
         public ActionResult UpdatePublisher(Publisher model)
         {
-            _publisherService.UpdatePublisher(model);
-            return RedirectToAction("Index");
+            try
+            {
+                _publisherService.UpdatePublisher(model);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View(model);
+            }
+           
         }
 
         public ActionResult DeletePublisher(int id)
         {
-            return View();
-
+            if (id != 0)
+            {
+             Publisher publisherModel= _publisherService.GetPublisherById(id);
+             return View(publisherModel);
+            }
+            else
+            {
+                return View();
+            }
         }
+        [HttpPost]
         public ActionResult DeletePublisher(int id, FormCollection collection)
         {
 
             if (id != 0)
-            {   
+            {
+                _publisherService.DeletePublisher(id);
+                
                 return RedirectToAction("Index");
             }
             else  

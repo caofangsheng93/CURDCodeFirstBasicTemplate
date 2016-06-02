@@ -14,5 +14,7 @@ namespace Code_First.Service
         void UpdatePublisher(Publisher model);
 
         void DeletePublisher(int id);
+
+        void Save();
     }
 }

@@ -47,5 +47,12 @@ namespace Code_First.Service
             _publisherRepository.Delete(id);
            // throw new NotImplementedException();
         }
+
+
+        public void Save()
+        {
+            _publisherRepository.Save();
+            throw new NotImplementedException();
+        }
     }
 }
