@@ -40,6 +40,7 @@ namespace Code_First_CURD.Controllers
                     Address = model.Address
                 };
                 _publisherService.InsertPublisher(publishModel);
+                _publisherService.Save();
                 
                 return RedirectToAction("Index");
             }
@@ -62,6 +63,7 @@ namespace Code_First_CURD.Controllers
             try
             {
                 _publisherService.UpdatePublisher(model);
+                _publisherService.Save();
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -90,7 +92,7 @@ namespace Code_First_CURD.Controllers
             if (id != 0)
             {
                 _publisherService.DeletePublisher(id);
-                
+                _publisherService.Save();
                 return RedirectToAction("Index");
             }
             else  
