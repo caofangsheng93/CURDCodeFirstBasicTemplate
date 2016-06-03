@@ -7,7 +7,8 @@
 
 <div>
     @Html.LabelFor(s=>s.ID)
-    @Html.DropDownListFor(s=>s.ID,Model.PublishList,"--请选择--")
+    @*@Html.DropDownListFor(s=>s.ID,Model.PublishList,"--请选择--")*@
+    @Html.DropDownList("PublishList",null,"--请您选择哇--")
 </div>
 <div id="listID"></div>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -35,9 +36,10 @@
 
         //});
 
+        
 
-        $("#ID").change(function () {
-            var id = $("#ID").val();//获取下拉框的值
+        $("#PublishList").change(function () {
+            var id = $("#PublishList").val();//获取下拉框的值
             var divID = $("#listID");
             $.ajax({
                 type: "get",

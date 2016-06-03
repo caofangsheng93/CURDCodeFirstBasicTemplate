@@ -108,16 +108,19 @@ namespace Code_First_CURD.Controllers
         /// <returns></returns>
         public ActionResult ShowPublishWithDropDownList()
         {
-          PublisherModel model=new PublisherModel(); //用于显示DropDownList的实体
+          //PublisherModel model=new PublisherModel(); //用于显示DropDownList的实体
           IEnumerable<Publisher> lstPublisher= _publisherService.GetAllPublisher();
-          model.PublishList = lstPublisher.Select(s => new SelectListItem() 
-          { 
+          //model.PublishList = lstPublisher.Select(s => new SelectListItem() 
+          //{ 
           
-          Text=s.PublisherName,
-          Value=s.PublisherId.ToString()
+          //Text=s.PublisherName,
+          //Value=s.PublisherId.ToString()
           
-          });
-            return View(model);
+          //});
+            //方法二：生成DropDownList
+          ViewBag.PublishList = new SelectList(lstPublisher, "PublisherId", "PublisherName");
+            //return View(model);
+          return View();
         }
 
     }
