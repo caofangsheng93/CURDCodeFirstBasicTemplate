@@ -41,7 +41,7 @@
             var divID = $("#listID");
             $.ajax({
                 type: "get",
-                url: "/Books/JsonGetBookByPublishId",
+                url: "../Books/JsonGetBookByPublishId",   //这里：【/Books/JsonGetBookByPublishId】，Books前面的/不能少,或者这样写也是对的：【../Books/JsonGetBookByPublishId】
                 dataType: "json",
                 cache: false,
                 data: { "id": id },

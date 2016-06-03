@@ -160,7 +160,7 @@ namespace Code_First_CURD.Controllers
             
             }).ToList();
 
-            return Json(model, JsonRequestBehavior.AllowGet);
+            return Json(model, JsonRequestBehavior.AllowGet);  //JsonRequestBehavior.AllowGet不能少
         }
 
        
