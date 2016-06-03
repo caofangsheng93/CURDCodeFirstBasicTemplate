@@ -1,0 +1,71 @@
+﻿@model Code_First_CURD.Models.PublisherModel
+@{
+    ViewBag.Title = "ShowPublishWithDropDownList";
+}
+
+<h2>ShowPublishWithDropDownList</h2>
+
+<div>
+    @Html.LabelFor(s=>s.ID)
+    @Html.DropDownListFor(s=>s.ID,Model.PublishList,"--请选择--")
+</div>
+<div id="listID"></div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+      
+        //$("#ID").change(function () {
+        //    var id = $("#ID").val();//获取下拉框的值
+        //    var divID = $("#listID");
+        //    $.ajax({
+        //        type: "get",
+        //        url: "/Books/JsonGetBookByPublishId",
+        //        dataType:"json",
+        //        cache: false,
+        //        data:{"id":id},
+        //        success: function (data) {
+        //            divID.html("");
+        //            divID.html(data);
+        //        },
+        //        error: function()
+        //        {
+        //            alert("系统错误");
+        //        }
+        //    });
+
+        //});
+
+
+        $("#ID").change(function () {
+            var id = $("#ID").val();//获取下拉框的值
+            var divID = $("#listID");
+            $.ajax({
+                type: "get",
+                url: "/Books/JsonGetBookByPublishId",
+                dataType: "json",
+                cache: false,
+                data: { "id": id },
+                success: function (data) {
+                    var result = "";
+                    divID.html("");
+                    //each循环遍历 $.each
+                    $.each(data, function (id, book) {
+                        result += '<b>Title : </b>' + book.BoodId + '<br/>' +
+                                    '<b> Author :</b>' + book.Title + '<br/>' +
+                                     '<b> Year :</b>' + book.Year + '<br/>';
+
+                    });
+                    divID.html(result);
+
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
+
+        });
+
+
+    });
+</script>
+

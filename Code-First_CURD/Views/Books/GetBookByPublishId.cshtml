@@ -1,0 +1,19 @@
+﻿@model  List<Code_First_CURD.Models.BookModel> 
+
+    <div>
+        <table>
+            <tr>
+                <th>BoodId</th>
+                <th>Title</th>
+                <th>Year</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.BoodId</td>
+                    <td>@item.Title</td>
+                    <td>@item.Year</td>
+                </tr>
+            }
+        </table>
+    </div>
